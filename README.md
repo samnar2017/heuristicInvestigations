@@ -54,10 +54,16 @@ In this case study we shall examine the following transaction to check if the as
 
 Source dragonglass.me
 The conversion between t? (tinybars) and hbar (Hedera Hashgraph's native cryptocurrency) is straightforward: 1 hbar equals 100,000,000 tinybars. To find out how many hbars are equivalent to 14,812,031,995,099 tinybars, you can simply divide the number of tinybars by 100,000,000:
-Number of hbars=14,812,031,995,099tinybars/100,000,000≈148,120.32 hbars
+Number of hbars=14,812,031,995,099 tinybars/100,000,000,148,120.32 hbars
 Account 
-0.0.xxxxx-14,812,031,995,099 t?0.0.113396814,812,031,966,900 t?The investigated funds got transferred to account 0.0.1133968 with 
-Memo4257175298And validated on the node 0.0.4. 
+0.0.xxxxx
+-14,812,031,995,099
+0.0.1133968
+14,812,031,966,900
+The investigated funds got transferred to account 0.0.1133968 with 
+Memo
+4257175298
+And validated on the node 0.0.4. 
 
 The presence of the memo suggests us that it is an exchange platform. The consensus timestamp occurred on Jan 20. 2025m 09:14 AM EST.  
 
@@ -80,13 +86,13 @@ The challenge will be to find all combinations of small transfers from 0.0.11555
 We will have to extract all data data = { "Transaction ID": [ ], "Transfers": [ ], "Consensus Timestamp": [ ], "Status": [ ] }
  that occurred from 0.0.1155594 between a given time frame. 
 
-Start Timestamp: 1/20/2025, 9:14:29 AM - When the transaction was initiated.
+Start Timestamp:√ä1/20/2025, 9:14:29 AM - When the transaction was initiated.
 
-End Timestamp: 1/20/2025. 2:38:55 PM – For experimental purposes we will suppose that all small transactions to others accounts were made before that timestamp. 
+End Timestamp: 1/20/2025. 2:38:55 PM √ê For experimental purposes we will suppose that all small transactions to others accounts were made before that timestamp. 
 
-We will suppose that the final transactions of the fractioned values occurred from account 0.0.1155594 to the different other accounts were final, and the user didn’t try to add another level of complexity for the investigation. Therefore we shall exclude the positive transactions from our data.json file. 
+We will suppose that the final transactions of the fractioned values occurred from account 0.0.1155594 to the different other accounts were final, and the user didn√ït try to add another level of complexity for the investigation. Therefore we shall exclude the positive transactions from our data.json file. 
 
-Let’s clean the json file: 
+Let√ïs clean the json file: 
 
 import json
 
@@ -187,9 +193,9 @@ cleaned_json = json.dumps(cleaned_data, indent=4)
 print(cleaned_json)
 
 
-The array in "Transfers" has 147 values total. We assume that the user did N amount of transfers from the initial amount into different accounts. Let’s assume N = 5, N = 4, N = 3, N = 2.  
+The array in "Transfers" has 147 values total. We assume that the user did N amount of transfers from the initial amount into different accounts. Let√ïs assume N = 5, N = 4, N = 3, N = 2.  
 
-We suppose that the total new transfers within a range of 148,100hbar and 148,139.32hbar (given that the total transfer was 148,120.32 + 10 + 9 = 148,139.32 minus transfer fees that gives us a bottom value of 148,100hbar and a top value of 148,139.32 – we suppose that the fees were insignificant).
+We suppose that the total new transfers within a range of 148,100hbar and 148,139.32hbar (given that the total transfer was 148,120.32 + 10 + 9 = 148,139.32 minus transfer fees that gives us a bottom value of 148,100hbar and a top value of 148,139.32 √ê we suppose that the fees were insignificant).
 
 To find out how many combinations we have in total: 
 
@@ -220,7 +226,7 @@ Total combinations of 2 to 5 transactions: 10731 + 518665 + 18671940 + 534017484
 
 That means we will need to perform 553218820 combinations. 
 
-I need to check also if the results of these combinations equal to one of the target values comprised within 148,100.00hbar and 148,139.32hbar. That’s 3932 different values.  
+I need to check also if the results of these combinations equal to one of the target values comprised within 148,100.00hbar and 148,139.32hbar. That√ïs 3932 different values.  
 
 Therefore the total checks we will have to perform will be equal to 553218820 combinations x 3932 target values = 2,175,256,400,240   
 
